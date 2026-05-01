@@ -239,6 +239,15 @@ main {
   margin-bottom: 0;
 }
 
+.profile-section {
+  display: grid;
+  gap: 18px;
+}
+
+.section-heading {
+  padding: 0 6px;
+}
+
 .grid-section {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
