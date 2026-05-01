@@ -289,13 +289,6 @@ main {
   border: 1px solid rgba(14, 34, 53, 0.08);
 }
 
-.principles-list span {
-  display: inline-block;
-  margin-bottom: 16px;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1.6rem;
-  color: var(--accent);
-}
 
 .closing {
   background:
