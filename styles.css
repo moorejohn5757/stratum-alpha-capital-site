@@ -307,6 +307,40 @@ main {
   max-width: 760px;
 }
 
+.blog-post-list {
+  display: grid;
+  gap: 24px;
+}
+
+.blog-post-card {
+  padding: 34px;
+}
+
+.blog-post-copy {
+  max-width: 820px;
+}
+
+.blog-post-summary {
+  margin: 18px 0 0;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.blog-post-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.blog-post-copy code {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(14, 34, 53, 0.08);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 0.94rem;
+}
+
 @media (max-width: 900px) {
   .topbar,
   .two-column,
