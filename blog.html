@@ -18,7 +18,6 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
-  <script src="blog-posts.js?v=2"></script>
 </head>
 <body>
   <div class="page-shell">
@@ -71,63 +70,13 @@
         <div class="section-heading">
           <p class="section-label">Blog posts</p>
         </div>
-        <div class="blog-post-list" id="blog-post-list"></div>
+        <article class="panel blog-post-card">
+          <div class="blog-post-copy">
+            <a class="text-link" href="https://stratumalphacapital.substack.com/publish/posts/published">Stratum Alpha Capital Substack</a>
+          </div>
+        </article>
       </section>
     </main>
   </div>
-  <script>
-    (function () {
-      const container = document.getElementById("blog-post-list");
-      const posts = Array.isArray(window.STRATUM_BLOG_POSTS) ? window.STRATUM_BLOG_POSTS : [];
-
-      if (!container) return;
-
-      if (!posts.length) {
-        container.innerHTML = [
-          '<article class="panel blog-post-card">',
-          '<div class="blog-post-copy">',
-          '<p class="section-label">No posts yet</p>',
-          "</div>",
-          "</article>",
-        ].join("");
-        return;
-      }
-
-      container.innerHTML = posts
-        .map(function (post) {
-          const title = post && post.title ? post.title : "Untitled post";
-          const date = post && post.date ? post.date : "";
-          const summary = post && post.summary ? post.summary : "";
-          const body = Array.isArray(post && post.body) ? post.body : [];
-          const links = Array.isArray(post && post.links) ? post.links : [];
-
-          return [
-            '<article class="panel blog-post-card">',
-            '<div class="blog-post-copy">',
-            date ? '<p class="section-label">' + date + "</p>" : "",
-            "<h2>" + title + "</h2>",
-            summary ? '<p class="blog-post-summary">' + summary + "</p>" : "",
-            body
-              .map(function (paragraph) {
-                return "<p>" + paragraph + "</p>";
-              })
-              .join(""),
-            links.length
-              ? '<div class="blog-post-links">' +
-                links
-                  .map(function (link) {
-                    if (!link || !link.href || !link.label) return "";
-                    return '<a class="text-link" href="' + link.href + '">' + link.label + "</a>";
-                  })
-                  .join("") +
-                "</div>"
-              : "",
-            "</div>",
-            "</article>",
-          ].join("");
-        })
-        .join("");
-    })();
-  </script>
 </body>
 </html>
