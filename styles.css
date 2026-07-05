@@ -46,8 +46,13 @@ a {
 }
 
 .container {
-  width: min(1100px, calc(100% - 48px));
+  width: calc(100% - 48px);
+  max-width: 1100px;
   margin: 0 auto;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 /* ---------- Header ---------- */
@@ -57,6 +62,7 @@ a {
   top: 0;
   z-index: 20;
   background: rgba(8, 17, 32, 0.92);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line-dark);
   color: #f6f2e8;
@@ -169,10 +175,12 @@ h3 {
 }
 
 h1 {
+  font-size: 3rem;
   font-size: clamp(2.3rem, 5vw, 3.7rem);
 }
 
 h2 {
+  font-size: 2rem;
   font-size: clamp(1.6rem, 3vw, 2.25rem);
 }
 
@@ -623,6 +631,7 @@ h3 {
 @media (max-width: 640px) {
   .container {
     width: calc(100% - 32px);
+    max-width: 1100px;
   }
 
   .hero-copy {
